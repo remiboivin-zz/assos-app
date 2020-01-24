@@ -73,14 +73,23 @@ class DeveloperManager
     return $users;
   }
 
-  public function update(Personnage $user)
+  public function update(Developer $user)
   {
-    $q = $this->_db->prepare('UPDATE users SET name = :name, phone = :phone, mail = :mail WHERE id = :id');
+    $q = $this->_db->prepare('UPDATE developers SET techno_use= :techno_use, techno_interest= :techno_interest, is_mentor=:is_mentor, is_mentor_interest= :is_mentor_interest, portfolio= :portfolio, interests= :interests WHERE id = :id');
+    $q->bindValue(':techno_use', $user->getTechnoUse(), PDO::PARAM_STR);
+    $q->bindValue(':techno_interest', $user->getTechnoInterest(), PDO::PARAM_STR);
+    $q->bindValue(':is_mentor', $user->getIsMentor(), PDO::PARAM_BOOL);
+    $q->bindValue(':is_mentor_interest', $user->getIsMentorInterest(), PDO::PARAM_BOOL);
+    $q->bindValue(':portfolio', $user->getPortfolio(), PDO::PARAM_STR);
+    $q->bindValue(':interests', $user->getInterests(), PDO::PARAM_STR);
+    $q->bindValue(':id', $user->getIds(), PDO::PARAM_INT);
+    $q->execute();
 
-    $q->bindValue(':name', $user->name(), PDO::PARAM_INT);
-    $q->bindValue(':phone', $user->phone(), PDO::PARAM_INT);
-    $q->bindValue(':mail', $user->mail(), PDO::PARAM_INT);
-    $q->bindValue(':id', $perso->id(), PDO::PARAM_INT);
+    $q = $this->_db->prepare('UPDATE users SET name = :name, phone = :phone, mail = :mail WHERE id_type = :id_type');
+    $q->bindValue(':name', $user->getNameParent(), PDO::PARAM_STR);
+    $q->bindValue(':phone', $user->getPhoneParent(), PDO::PARAM_STR);
+    $q->bindValue(':mail', $user->getMailParent(), PDO::PARAM_STR);
+    $q->bindValue(':id_type', $user->getIds(), PDO::PARAM_INT);
     $q->execute();
   }
 
