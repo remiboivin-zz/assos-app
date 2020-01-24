@@ -39,7 +39,6 @@ for ($i = 0; $i < 10; $i++) {
     }
   }
   $developer->setMsgError($error);
-//  $error = $developer->getMsgError();
   foreach ($error as $key => $value) {
     $stack = new Stack($value);
     echo('<b style="color:red">Message:</b> '.$stack->getMsg().'<br/>');
@@ -47,26 +46,4 @@ for ($i = 0; $i < 10; $i++) {
     echo('<b style="color:red">Stack:</b> '.$stack->getStack().'<br/>');
     unset($stack);
   }
-
-  // for ($i = 0; $i < 10; $i++) {
-  //   try {
-  //     $assos = new Assos([
-  //       'name' => $faker->name,
-  //       'phone' => $faker->phoneNumber,
-  //       'mail' => $faker->freeEmail,
-  //       'Type' => Association,
-  //       'admin' => True,
-  //       'status' => offline,
-  //       'description' => $faker->text,
-  //       'address' => $faker->address,
-  //       'statusAssos' => true,
-  //
-  //     ]);
-  //     $db = new PDO('mysql:host=localhost;dbname=app_assos', 'root', 'bo81re47&*');
-  //     //$manager = new AssosManager($db);
-  //     //$manager->add($assos);
-  //   } catch (Exception $e) {
-  //     $error[$i] = $e;
-  //   }
-  // }
   ?>
