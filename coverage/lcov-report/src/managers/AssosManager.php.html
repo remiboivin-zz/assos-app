@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/managers/AssosManager.php</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/managers/</a> AssosManager.php
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/33</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;?php
+/**
+*
+*/
+&nbsp;
+namespace Src;
+use PDO;
+<span class="cstat-no" title="statement not covered" >req</span>uire_once ('./src/Assos.php');
+&nbsp;
+class AssosManager
+{
+&nbsp;
+  private $_db; // Instance de PDO
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public function __construct($db)</span>
+  {
+<span class="cstat-no" title="statement not covered" >    $this-&gt;setDb($db);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public function add(Assos $assos)</span>
+  {
+    $q = $this-&gt;_db-&gt;prepare('INSERT INTO asso(description, address, idPage, assosStatus)
+<span class="cstat-no" title="statement not covered" ></span>     VALUES(:description, :address, :idPage, :assosStatus)');
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':description', $assos-&gt;get</span>Description(), PDO::PARAM_STR);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':address', $assos-&gt;get</span>Address(), PDO::PARAM_STR);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':idPage', $assos-&gt;get</span>IdPage(), PDO::PARAM_INT);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':assosStatus', $assos-&gt;getA</span>ssosStatus(), PDO::PARAM_BOOL);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;execute();</span>
+<span class="cstat-no" title="statement not covered" ></span>    $q = $this-&gt;_db-&gt;prepare('INSERT INTO users(name, phone, mail, type, id_type, is_admin, status) VALUES(:name, :phone, :mail, :type, :id_type, :is_admin, :status)');
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':name', $assos-&gt;getNamePar</span>ent(), PDO::PARAM_STR );
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':phone', $assos-&gt;getPhonePa</span>rent(), PDO::PARAM_STR );
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':mail', $assos-&gt;getMailPar</span>ent(), PDO::PARAM_STR );
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':type', $assos-&gt;getTypePar</span>ent(), PDO::PARAM_INT );
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':id_type', $this-&gt;_db-&gt;lastI</span>nsertId(), PDO::PARAM_INT);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':is_admin', $assos-&gt;getAdmi</span>nParent(), PDO::PARAM_BOOL);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':status', $assos-&gt;getStatus</span>Parent(), PDO::PARAM_INT);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;execute();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public function delete(User $user)</span>
+  {
+<span class="cstat-no" title="statement not covered" >    $this-&gt;_db-</span>&gt;exec('DELETE FROM users WHERE id = '.$user-&gt;id());
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public function get($id)</span>
+  {
+<span class="cstat-no" title="statement not covered" >    $id = (int) $id;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $q </span>= $this-&gt;_db-&gt;query('SELECT id, name, phone, mail FROM users WHERE id = '.$id);
+<span class="cstat-no" title="statement not covered" >    $donnees = $q-&gt;fetch(PDO::FETCH_ASSOC);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return new User($donnees);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public function getList()</span>
+  {
+<span class="cstat-no" title="statement not covered" >    $users = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ></span>    $q = $this-&gt;_db-&gt;query('SELECT id, name, phone, mail FROM users ORDER BY name');
+&nbsp;
+    while ($donnees = $q-&gt;fetch(PDO::FETCH_ASSOC))
+    {
+<span class="cstat-no" title="statement not covered" >      $users[] = new User($donnees);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return $users;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public function update(Personnage $user)</span>
+  {
+<span class="cstat-no" title="statement not covered" ></span>    $q = $this-&gt;_db-&gt;prepare('UPDATE users SET name = :name, phone = :phone, mail = :mail WHERE id = :id');
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':name', $user-&gt;</span>name(), PDO::PARAM_INT);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':phone', $user-&gt;</span>phone(), PDO::PARAM_INT);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':mail', $user-&gt;</span>mail(), PDO::PARAM_INT);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':id', $perso-&gt;</span>id(), PDO::PARAM_INT);
+<span class="cstat-no" title="statement not covered" >    $q-&gt;execute();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public function setDb(PDO $db)</span>
+  {
+<span class="cstat-no" title="statement not covered" >    $this-&gt;_db = $db;</span>
+  }
+&nbsp;
+}
+&nbsp;
+?&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 24 2020 04:35:40 GMT+0100 (heure normale d’Europe centrale)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

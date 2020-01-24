@@ -1,0 +1,8 @@
+{
+    "require-dev": {
+        "kahlan/kahlan": "^4.6"
+    },
+    "require": {
+        "fzaninotto/faker": "^1.9"
+    }
+}

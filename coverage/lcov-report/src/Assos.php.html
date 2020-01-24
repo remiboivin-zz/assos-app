@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/Assos.php</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> Assos.php
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;?php
+&nbsp;
+/**
+*
+*/
+// namespace Src;
+// use PDO;
+<span class="cstat-no" title="statement not covered" >req</span>uire_once ('./src/User.php');
+&nbsp;
+&nbsp;
+class Assos extends User
+{
+  //    :id, :techno_use, :techno_interest, :is_mentor, :is_mentor_interest, :status, :portfolio, :interests
+  private $_description;
+  private $_address;
+  private $_assosStatus;
+  private $_idPage;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public function __construct(array $datas)</span>
+  {
+<span class="cstat-no" title="statement not covered" >    Parent::__construct($datas);</span>
+<span class="cstat-no" title="statement not covered" >    $this-&gt;hydrate($datas);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public function hydrate(array $donnees)</span>
+  {
+    foreach ($donnees as $key =&gt; $value)
+    {
+      // On récupère le nom du setter correspondant à l'attribut.
+<span class="cstat-no" title="statement not covered" >      $method = </span>'set'.ucfirst($key);
+      // Si le setter correspondant existe.
+      if (method_exists($this, $method))
+      {
+        // On appelle le setter.
+<span class="cstat-no" title="statement not covered" >        $this-&gt;$method($value);</span>
+      }
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getDescrip</span>tion() {return $this-&gt;_description;}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getAdd</span>ress() {return $this-&gt;_address;}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getId</span>Page() {return $this-&gt;_idPage;}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getAssosSt</span>atus() {return $this-&gt;_assosStatus;}
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getAdminP</span>arent() {return Parent::getAdmin();}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getTypeP</span>arent() {return Parent::getType();}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getPhoneP</span>arent() {return Parent::getPhone();}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getNameP</span>arent() {return Parent::getName();}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getMailP</span>arent() {return Parent::getMail();}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getStatusP</span>arent() {return Parent::getStatus();}
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function setId</span>($id) {$this-&gt;_id = (int)$id;}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function setIdPage($id</span>Page) {$this-&gt;_idPage = (int)$idPage;}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function setStatusAssos($assosSt</span>atus) {$this-&gt;_assosStatus = (int)$assosStatus;}
+<span class="fstat-no" title="function not covered" >  public function setAddress($address) {</span>
+    if (is_string($address)) {
+<span class="cstat-no" title="statement not covered" >      $this-&gt;_address = $address;</span>
+    }
+  }
+<span class="fstat-no" title="function not covered" >  public function setDescription($description) {</span>
+    if (is_string($description)) {
+<span class="cstat-no" title="statement not covered" >      $this-&gt;_description = $description;</span>
+    }
+  }
+}
+?&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 24 2020 04:35:40 GMT+0100 (heure normale d’Europe centrale)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
