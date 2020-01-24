@@ -7,7 +7,6 @@ define ("Developer" , 0);
 define ("Association" , 1);
 require_once 'vendor/autoload.php';
 require_once ('./src/managers/DeveloperManager.php');
-require_once ('./src/managers/AssosManager.php');
 require_once ('./src/Stack.php');
 
 $i  = 0;
