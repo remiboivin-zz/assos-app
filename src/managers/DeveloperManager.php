@@ -45,30 +45,29 @@ class DeveloperManager
     }
   }
 
-  public function delete(User $user)
+  public function delete(Developer $user)
   {
-    $this->_db->exec('DELETE FROM users WHERE id = '.$user->id());
+    $this->_db->exec('DELETE FROM developers WHERE id = '.$user->getIds());
+    $this->_db->exec('DELETE FROM users WHERE id_type = '.$user->getIds());
   }
 
   public function get($id)
   {
     $id = (int) $id;
-
-    $q = $this->_db->query('SELECT id, name, phone, mail FROM users WHERE id = '.$id);
+    $q = $this->_db->query('SELECT id, techno_use, techno_interest, is_mentor, is_mentor_interest, portfolio, interests FROM developers WHERE id = '.$id);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
-
-    return new User($donnees);
+    return new Developer($donnees);
   }
 
   public function getList()
   {
     $users = [];
 
-    $q = $this->_db->query('SELECT id, name, phone, mail FROM users ORDER BY name');
+    $q = $this->_db->query('SELECT id, techno_use, techno_interest, is_mentor, is_mentor_interest, portfolio, interests FROM developers ORDER BY id');
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
     {
-      $users[] = new User($donnees);
+      $users[] = new Developer($donnees);
     }
 
     return $users;

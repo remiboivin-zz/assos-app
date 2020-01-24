@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/35</span>
+        <span class='fraction'>0/38</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/35</span>
+        <span class='fraction'>0/38</span>
       </div>
     </div>
   </div>
@@ -129,7 +129,16 @@
 84
 85
 86
-87</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,6 +156,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -165,6 +176,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -233,24 +251,33 @@ class DeveloperManager
 &nbsp;
 <span class="fstat-no" title="function not covered" >  public function add(Developer $developer)</span>
   {
-    $q = $this-&gt;_db-&gt;prepare('INSERT INTO developers(techno_use, techno_interest, is_mentor, is_mentor_interest, portfolio, interests)
-<span class="cstat-no" title="statement not covered" ></span>     VALUES(:techno_use, :techno_interest, :is_mentor, :is_mentor_interest, :portfolio, :interests)');
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':techno_use', $developer-&gt;ge</span>tTechnoUse(), PDO::PARAM_STR);
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':techno_interest', $developer-&gt;ge</span>tTechnoInterest(), PDO::PARAM_STR);
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':is_mentor', $developer-&gt;get</span>IsMentor(), PDO::PARAM_BOOL);
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':is_mentor_interest', $developer-&gt;ge</span>tIsMentorInterest(), PDO::PARAM_BOOL);
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':portfolio', $developer-&gt;get</span>Portfolio(), PDO::PARAM_STR);
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':interests', $developer-&gt;get</span>Interests(), PDO::PARAM_STR);
-<span class="cstat-no" title="statement not covered" >    $q-&gt;execute();</span>
-<span class="cstat-no" title="statement not covered" ></span>    $q = $this-&gt;_db-&gt;prepare('INSERT INTO users(name, phone, mail, type, id_type, is_admin, status) VALUES(:name, :phone, :mail, :type, :id_type, :is_admin, :status)');
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':name', $developer-&gt;getNamePar</span>ent(), PDO::PARAM_STR );
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':phone', $developer-&gt;getPhonePa</span>rent(), PDO::PARAM_STR );
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':mail', $developer-&gt;getMailPar</span>ent(), PDO::PARAM_STR );
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':type', $developer-&gt;getTypePar</span>ent(), PDO::PARAM_INT );
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':id_type', $this-&gt;_db-&gt;lastI</span>nsertId(), PDO::PARAM_INT);
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':is_admin', $developer-&gt;getAdmi</span>nParent(), PDO::PARAM_BOOL);
-<span class="cstat-no" title="statement not covered" >    $q-&gt;bindValue(':status', $developer-&gt;getStatus</span>Parent(), PDO::PARAM_INT);
-<span class="cstat-no" title="statement not covered" >    $q-&gt;execute();</span>
+<span class="cstat-no" title="statement not covered" >    $error = [];</span>
+    try {
+      $q = $this-&gt;_db-&gt;prepare('INSERT INTO developers(techno_use, techno_interest, is_mentor, is_mentor_interest, portfolio, interests)
+<span class="cstat-no" title="statement not covered" ></span>      VALUES(:techno_use, :techno_interest, :is_mentor, :is_mentor_interest, :portfolio, :interests)');
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':techno_use', $developer-&gt;</span>getTechnoUse(), PDO::PARAM_STR);
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':techno_interest', $developer-&gt;</span>getTechnoInterest(), PDO::PARAM_STR);
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':is_mentor', $developer-&gt;g</span>etIsMentor(), PDO::PARAM_BOOL);
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':is_mentor_interest', $developer-&gt;</span>getIsMentorInterest(), PDO::PARAM_BOOL);
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':portfolio', $developer-&gt;g</span>etPortfolio(), PDO::PARAM_STR);
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':interests', $developer-&gt;g</span>etInterests(), PDO::PARAM_STR);
+<span class="cstat-no" title="statement not covered" >      $q-&gt;execute();</span>
+<span class="cstat-no" title="statement not covered" ></span>      $q = $this-&gt;_db-&gt;prepare('INSERT INTO users(name, phone, mail, type, id_type, is_admin, status) VALUES(:name, :phone, :mail, :type, :id_type, :is_admin, :status)');
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':name', $developer-&gt;getNameP</span>arent(), PDO::PARAM_STR );
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':phone', $developer-&gt;getPhone</span>Parent(), PDO::PARAM_STR );
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':mail', $developer-&gt;getMailP</span>arent(), PDO::PARAM_STR );
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':type', $developer-&gt;getTypeP</span>arent(), PDO::PARAM_INT );
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':id_type', $this-&gt;_db-&gt;las</span>tInsertId(), PDO::PARAM_INT);
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':is_admin', $developer-&gt;getAd</span>minParent(), PDO::PARAM_BOOL);
+<span class="cstat-no" title="statement not covered" >      $q-&gt;bindValue(':status', $developer-&gt;getStat</span>usParent(), PDO::PARAM_INT);
+<span class="cstat-no" title="statement not covered" >      $q-&gt;execute();</span>
+    } catch(PDOException $e)
+    {
+<span class="cstat-no" title="statement not covered" >      $error = $e;</span>
+    }
+    foreach ($error as $key =&gt; $value) {
+<span class="cstat-no" title="statement not covered" ></span>      echo('&lt;b style="color:red"&gt;Message:&lt;/b&gt; '.$value[2].'&lt;br/&gt;');
+    }
   }
 &nbsp;
 <span class="fstat-no" title="function not covered" >  public function delete(User $user)</span>
@@ -307,7 +334,7 @@ class DeveloperManager
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 24 2020 04:35:40 GMT+0100 (heure normale d’Europe centrale)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 24 2020 15:13:59 GMT+0100 (heure normale d’Europe centrale)
 </div>
 </div>
 <script src="../../prettify.js"></script>

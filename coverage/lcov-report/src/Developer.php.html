@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.75% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>30/32</span>
+        <span class='fraction'>28/32</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">91.67% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>24/24</span>
+        <span class='fraction'>22/24</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.75% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>30/32</span>
+        <span class='fraction'>28/32</span>
       </div>
     </div>
   </div>
@@ -170,33 +170,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-yes">2×</span>
@@ -204,6 +195,15 @@
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-yes">2×</span>
@@ -214,11 +214,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -270,7 +270,7 @@ class Developer extends User
   private $_msgErrors;
   private $_codeErrors;
 &nbsp;
-  public function __construct(array $datas)
+  public function __construct($datas)
   {
     Parent::__construct($datas);
     $this-&gt;hydrate($datas);
@@ -298,7 +298,7 @@ class Developer extends User
   public function getIsMentorInterest() {return $this-&gt;_isMentorInterest;}
   public function getPortfolio() {return $this-&gt;_portfolio;}
   public function getInterests() {return $this-&gt;_interests;}
-  public function getMsgError() {return $this-&gt;_msgErrors;}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>  public function getMsgEr</span>ror() {return $this-&gt;_msgErrors;}
 &nbsp;
   public function getStatusParent() {return Parent::getStatus();}
   public function getAdminParent() {return Parent::getAdmin();}
@@ -319,8 +319,8 @@ class Developer extends User
       throw new \Exception("Error var technoUse is not string type", 1);
     }
   }
-  public function setMsgError(Exception $MsgError) {
-    $this-&gt;_msgErrors = $MsgError-&gt;getMessage();
+<span class="fstat-no" title="function not covered" >  public function setMsgError(Array $MsgError) {</span>
+<span class="cstat-no" title="statement not covered" >    $this-&gt;_msgErrors = $MsgError;</span>
   }
   public function setTechnoInterest($technoInterest) {
     if (is_string($technoInterest))
@@ -355,7 +355,7 @@ class Developer extends User
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 24 2020 04:35:40 GMT+0100 (heure normale d’Europe centrale)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 24 2020 15:13:59 GMT+0100 (heure normale d’Europe centrale)
 </div>
 </div>
 <script src="../prettify.js"></script>

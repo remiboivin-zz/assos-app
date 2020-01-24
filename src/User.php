@@ -51,7 +51,7 @@ abstract class User
     if (is_string($phone) and strlen($phone) <= 14) {
       $this->_phone = $phone;
     } else {
-      throw new \Exception("Error phone is too big. Please enter a number who contains les than 14 characters", 1);
+      throw new \Exception("Error phone is too big. Please enter a number who contains les than 14 characters to continue", 1);
     }
   }
   public function setAdmin($admin) {
@@ -59,20 +59,22 @@ abstract class User
       $this->_admin = $admin;
     } else {
       throw new \Exception("Error $admin is not bool type", 1);
-      ;
     }
   }
   public function setName($name) {
     if (is_string($name))
     {
       $this->_name = $name;
+    }  else {
+      throw new \Exception("Error name is not a valid string. Please enter a valid string  to continue", 1);
     }
   }
   public function setMail($mail) {
     if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
       $this->_mail = $mail;
+    }  else {
+      throw new \Exception("Error email is not a valid email. Please enter a valid email to continue", 1);
     }
   }
 }
-
 ?>

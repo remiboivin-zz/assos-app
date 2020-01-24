@@ -21,7 +21,7 @@ class Developer extends User
   private $_msgErrors;
   private $_codeErrors;
 
-  public function __construct(array $datas)
+  public function __construct($datas)
   {
     Parent::__construct($datas);
     $this->hydrate($datas);
