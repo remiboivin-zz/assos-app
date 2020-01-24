@@ -70,7 +70,7 @@ class Developer extends User
       throw new \Exception("Error var technoUse is not string type", 1);
     }
   }
-  public function setMsgError(Array $MsgError) {
+  public function setMsgError(String $MsgError) {
     $this->_msgErrors = $MsgError;
   }
   public function setTechnoInterest($technoInterest) {

@@ -10,23 +10,23 @@ describe('Developer', function(){
   define ("offline" , 2);
   define ("Developer" , 0);
   define ("Association" , 1);
-  beforeEach(function () {
-    $faker = Faker\Factory::create();
-    $developer = new Developer([
-      'name' => $faker->name,
-      'phone' => $faker->phoneNumber,
-      'mail' => $faker->freeEmail,
-      'Type' => Developer,
-      'admin' => True,
-      'technoUse' => "PHP;MYSQL;RAILS",
-      'technoInterest' => $faker->words[0].';'.$faker->words[1].';'.$faker->words[2].';',
-      'isMentor' => false,
-      'isMentorInterest' => false,
-      'status' => offline,
-      'portfolio' => $faker->url,
-      'interests' => $faker->words[0].';'.$faker->words[1].';'.$faker->words[2].';'
-    ]);
-  });
+  // beforeEach(function () {
+  //   $faker = Faker\Factory::create();
+  //   $developer = new Developer([
+  //     'name' => $faker->name,
+  //     'phone' => $faker->phoneNumber,
+  //     'mail' => $faker->freeEmail,
+  //     'Type' => Developer,
+  //     'admin' => True,
+  //     'technoUse' => "PHP;MYSQL;RAILS",
+  //     'technoInterest' => $faker->words[0].';'.$faker->words[1].';'.$faker->words[2].';',
+  //     'isMentor' => false,
+  //     'isMentorInterest' => false,
+  //     'status' => offline,
+  //     'portfolio' => $faker->url,
+  //     'interests' => $faker->words[0].';'.$faker->words[1].';'.$faker->words[2].';'
+  //   ]);
+  // });
 
   it('Test Exception  technoUse of Developer class', function () {
     $closure = function () {
@@ -141,7 +141,7 @@ describe('Developer', function(){
     try {
       $developer->setPortfolio(45);
     } catch (Exception $e) {
-      $developer->setMsgError($e);
+      $developer->setMsgError($e->getMessage());
     }
     $var = $developer->getMsgError();
     expect($var)->toBe("Error var portfolio is not string type");

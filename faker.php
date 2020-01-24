@@ -6,8 +6,7 @@ define ("offline" , 2);
 define ("Developer" , 0);
 define ("Association" , 1);
 require_once 'vendor/autoload.php';
-require_once ('./src/managers/DeveloperManager.php');
-require_once ('./src/managers/AssosManager.php');
+require_once ('./src/Developer.php');
 require_once ('./src/Stack.php');
 
 $i  = 0;
@@ -29,10 +28,6 @@ for ($i = 0; $i < 10; $i++) {
       'portfolio' => $faker->url,
       'interests' => $faker->words[0].';'.$faker->words[1].';'.$faker->words[2].';'
     ]);
-    $db = new PDO('mysql:host=localhost;dbname=app_assos', 'root', 'bo81re47&*', array(
-      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-      $manager = new DeveloperManager($db);
-      $manager->add($developer);
     } catch (Exception $e) {
 
       $error[$i] = $e;
@@ -47,26 +42,4 @@ for ($i = 0; $i < 10; $i++) {
     echo('<b style="color:red">Stack:</b> '.$stack->getStack().'<br/>');
     unset($stack);
   }
-
-  // for ($i = 0; $i < 10; $i++) {
-  //   try {
-  //     $assos = new Assos([
-  //       'name' => $faker->name,
-  //       'phone' => $faker->phoneNumber,
-  //       'mail' => $faker->freeEmail,
-  //       'Type' => Association,
-  //       'admin' => True,
-  //       'status' => offline,
-  //       'description' => $faker->text,
-  //       'address' => $faker->address,
-  //       'statusAssos' => true,
-  //
-  //     ]);
-  //     $db = new PDO('mysql:host=localhost;dbname=app_assos', 'root', 'bo81re47&*');
-  //     //$manager = new AssosManager($db);
-  //     //$manager->add($assos);
-  //   } catch (Exception $e) {
-  //     $error[$i] = $e;
-  //   }
-  // }
   ?>
