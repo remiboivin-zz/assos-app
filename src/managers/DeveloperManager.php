@@ -56,6 +56,7 @@ class DeveloperManager
     $id = (int) $id;
     $q = $this->_db->query('SELECT id, techno_use, techno_interest, is_mentor, is_mentor_interest, portfolio, interests FROM developers WHERE id = '.$id);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
+    echo $donnees['techno_use'];
     return new Developer($donnees);
   }
 
@@ -63,7 +64,7 @@ class DeveloperManager
   {
     $users = [];
 
-    $q = $this->_db->query('SELECT id, techno_use, techno_interest, is_mentor, is_mentor_interest, portfolio, interests FROM developers ORDER BY id');
+    $q = $this->_db->query('SELECT id, techno_use, techno_interest, is_mentor, is_mentor_interest, portfolio, interests FROM developers');
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
     {

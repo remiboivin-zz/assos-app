@@ -14,11 +14,10 @@ describe('DeveloperManager', function(){
           $manager = new DeveloperManager($db);
           $manager->add($developer);
           $list = $manager->get($db->lastInsertId());
+          return ($list);
         } catch (Exception $e) {
           $error[$i] = $e;
           echo $e;
-        } finally {
-          return $list;
         }
       }
       it('Test add() of DeveloperManager class', function () {
@@ -40,7 +39,6 @@ describe('DeveloperManager', function(){
           'interests' => $faker->words[0].';'.$faker->words[1].';'.$faker->words[2].';'
         ]);
         $list = test($developer);
-        echo 'aff=========================';
         $list->getTechnoUse();
         expect($list->getIds())->not->toBe(null);
       });
@@ -99,16 +97,49 @@ describe('DeveloperManager', function(){
               PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
               $manager = new DeveloperManager($db);
               $manager->update($developer);
-              $newDeveloper = $manager->get($id);
-              echo '++++++++++++++++++++++++++   '.$newDeveloper->getIsMentor();
+              echo '+++++++++++++++++++++'.$manager->get($id)->getTechnoInterest();
+              // echo '++++++++++++++++++++'.$developer->getTechnoUse();
             } catch (Exception $e){
             }
-            expect($newDeveloper->getPortfolio())->toBe($developer->getPortfolio());
+            // expect($newDeveloper->getTechnoUse())->toBe($developer->getPortfolio());
           });
           // public function setDb(PDO $db)
           it('Test delete() of Stack class', function () {
             $stack = new Stack(new Exception("Error var technoUse is not string type", 1));
             expect($stack->getMsg())->toBe("Exception: Error var technoUse is not string type ");
           });
-        });
-        ?>
+
+          it('Test getList() of DeveloperManager class', function () {
+            $faker = Faker\Factory::create();
+            $url = $faker->url();
+            $developer = new Developer([
+              'name' => $faker->name,
+              'phone' => "06-73-90-92-26",
+              'mail' => $faker->freeEmail,
+              'Type' => Developer,
+              'admin' => True,
+              'technoUse' => $faker->words[0].';'.$faker->words[1].';'.$faker->words[2].';',
+              'technoInterest' => "[PHP];[SYMFONY];[NODEJS];[RAILS];",
+              'isMentor' => false,
+              'isMentorInterest' => false,
+              'status' => offline,
+              'portfolio' => $url,
+              'interests' => $faker->words[0].';'.$faker->words[1].';'.$faker->words[2].';'
+            ]);
+            $db = new PDO('mysql:host=localhost;dbname=app_assos', 'root', 'bo81re47&*', array(
+              PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+              $manager = new DeveloperManager($db);
+              $newDeveloper = $manager->getList($developer);
+              foreach ($newDeveloper as $key => $value) {
+                // echo("DEBUGING");
+                $value->getIds();
+              }
+              //expect($newDeveloper->getPortfolio())->toBe($developer->getPortfolio());
+            });
+            // // public function setDb(PDO $db)
+            // it('Test delete() of Stack class', function () {
+            //   $stack = new Stack(new Exception("Error var technoUse is not string type", 1));
+            //   expect($stack->getMsg())->toBe("Exception: Error var technoUse is not string type ");
+            // });
+          });
+          ?>
